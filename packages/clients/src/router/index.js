@@ -1,20 +1,16 @@
-// import Vue from "vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import ClientList from "../components/ClientList.vue";
-
-// Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/clients",
     name: "clients",
     component: ClientList
   }
 ];
 
 const router = new createRouter({
-  mode: "history",
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 });
 
