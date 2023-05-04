@@ -4,7 +4,6 @@
   "description": "[![CircleCI](https://circleci.com/gh/polyglot-microfrontends/shared-dependencies.svg?style=svg)](https://circleci.com/gh/polyglot-microfrontends/shared-dependencies)",
   "scripts": {
     "build": "shared-deps build shared-deps.conf.mjs",
-    "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },

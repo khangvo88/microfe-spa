@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "webpack serve",
+    "serve": "PORT=8081 yarn start",
     "build": "webpack --mode production",
     "analyze": "webpack --mode production --env analyze",
     "lint": "eslint src",
