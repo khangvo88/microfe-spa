@@ -14,5 +14,9 @@ module.exports = (webpackConfigEnv) => {
   );
   cssRule.use[1].options.modules = true;
 
-  return merge(defaultConfig, {});
+  return merge(defaultConfig, {
+    devServer: {
+      port: process.env.PORT || 8081,
+    }
+  });
 };

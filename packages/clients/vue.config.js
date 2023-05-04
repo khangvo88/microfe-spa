@@ -1,17 +1,26 @@
-module.exports = {
-  lintOnSave: false,
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
   configureWebpack: {
+    output: {
+      libraryTarget: "system",
+    },
     devServer: {
       headers: {
         "Access-Control-Allow-Origin": "*"
       },
-      disableHostCheck: true,
       // sockPort: 8500,
       // sockHost: "localhost",
       // https: true,
       port: 8500
     },
-    externals: ["vue", "vue-router", /^@vue-mf\/.+/]
+  },
+  chainWebpack: config => {
+    // if (config.plugins.has("SystemJSPublicPathWebpackPlugin")) {
+    //   config.plugins.delete("SystemJSPublicPathWebpackPlugin");
+    // }
+
+    // config.externals(['vue', 'vue-router']);
   },
   filenameHashing: false
-};
+})

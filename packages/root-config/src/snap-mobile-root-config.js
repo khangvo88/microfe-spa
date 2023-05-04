@@ -1,5 +1,14 @@
 import { registerApplication, start } from "single-spa";
 
+// registerApplication({
+//   name: "@single-spa/welcome",
+//   app: () =>
+//     System.import(
+//       "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
+//     ),
+//   activeWhen: ["/"],
+// });
+
 registerApplication({
   name: "@snap-mobile/mf-navbar",
   app: () => System.import("@snap-mobile/mf-navbar"),
@@ -18,7 +27,15 @@ registerApplication({
   activeWhen: "/settings",
 });
 
-start();
+// registerApplication({
+//   name: "@snap-mobile/navbar",
+//   app: () => System.import("@snap-mobile/navbar"),
+//   activeWhen: ["/"]
+// });
+
+start({
+  urlRerouteOnly: true,
+});
 
 // A lot of angularjs libs are compiled to UMD, and if you don't process them with webpack
 // the UMD calls to window.define() can be problematic.
