@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snap-Mobile Microfrontends</title>
+  <meta name="importmap-type" content="systemjs-importmap" />
+
+  {% if (isLocal) { %}
+  <script type="systemjs-importmap" src="http://localhost:3030/importmap.json"></script>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@snap-mobile/root-config": "//localhost:9000/polyglot-mf-root-config.js"
+      }
+    }
+  </script>
+  {% } else { %}
+  <script type="systemjs-importmap" src="https://storage.googleapis.com/polyglot.microfrontends.app/importmap.json"></script>
+  {% } %}
+
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+</head>
+<body>
+  <script>
+    System.import('@snap-mobile/mf-root');
+    System.import('@snap-mobile/mf-styleguide');
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>

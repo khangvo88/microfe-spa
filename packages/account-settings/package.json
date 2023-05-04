@@ -1,0 +1,32 @@
+{
+  "name": "@snap-mobile/mf-account-settings",
+  "version": "0.1.0",
+  "description": "The account settings single-spa application",
+  "scripts": {
+    "build": "gulp",
+    "start": "concurrently yarn:watch yarn:serve",
+    "serve": "http-server dist --cors",
+    "clean": "gulp clean",
+    "watch": "gulp watch",
+    "lint": "eslint src",
+    "test": "echo 'No tests yet'",
+    "create-ssl-cert": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/systemjs": "^6.1.0",
+    "angular": "^1.8.3",
+    "angular-ui-router": "^1.0.25",
+    "concurrently": "^5.1.0",
+    "del": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-important-stuff": "^1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1"
+  },
+  "dependencies": {
+    "single-spa-angularjs": "^3.2.0"
+  }
+}
