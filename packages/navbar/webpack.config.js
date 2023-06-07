@@ -1,11 +1,12 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
 
-module.exports = (webpackConfigEnv) => {
+module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "snap-mobile",
     projectName: "mf-navbar",
     webpackConfigEnv,
+    argv
   });
 
   const cssRule = defaultConfig.module.rules.find(

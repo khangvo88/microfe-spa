@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gulp",
     "start": "concurrently yarn:watch yarn:serve",
-    "serve": "http-server dist --cors",
+    "serve": "http-server dist --cors --port 8083",
     "clean": "gulp clean",
     "watch": "gulp watch",
     "lint": "eslint src",
